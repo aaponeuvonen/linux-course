@@ -1,3 +1,5 @@
+#linux course
+
 - "Free Software" tarkoittaa ohjelmistoa, joka tarjoaa kaikki neljä välttämätöntä vapautta sen käyttäjälle
 
 - Tukee yksilön oikeuksia ja yhteisöllisyyttä
