@@ -1,4 +1,4 @@
-#linux course
+# h1 Free Software
 
 - "Free Software" tarkoittaa ohjelmistoa, joka tarjoaa kaikki neljä välttämätöntä vapautta sen käyttäjälle
 
