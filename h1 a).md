@@ -1,4 +1,4 @@
-# Linuxin asennus virtuaalikoneeseen
+# Debian asennus VirtualBoxiin
 
 CPU	AMD Ryzen 5 1600 Six-Core Processor, 3400 Mhz, 6 Core
 GPU NVIDIA GeForce GTX 1060 6GB
