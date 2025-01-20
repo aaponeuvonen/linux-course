@@ -41,16 +41,35 @@ Ei mitään ongelmia boottaamisessa, ja kaikki meni niinkuin piti. Pystyin kirja
 Nyt on Debian asennettu!
 
 Sitten Terminal auki, ja hankitaan "superuser" oikeudet ja haetaan samalla päivitykset mitä on mahdollista asentaa.
+
 Komennolla $ sudo apt-get update
 
 Sen jälkeen asensin kaikki uusimmat päivitykset.
+
 Komennolla $ sudo apt-get -y dist-upgrade
 
-Ja lopulta asensin palomuurin 
-Komennoilla $ sudo apt-get -y install ufw
+Ja lopulta asensin palomuurin komennoilla:
+
+$ sudo apt-get -y install ufw
 $ sudo ufw enable
 
 Sitten boottasin ja kaikki on valmista!
+
+Asensin vielä Guest Additions lisäosan, jotta sain paremman resoluution, ettei tarvitse pientä ikkunaa tuijottaa.
+
+Avasin ylhäältä Devices, ja sitten Insert guest Additions CD image...jne. 
+Klikkasin CDROM:ia tiedostoissa, jotta se ns kiinnittyi.
+
+Sitten Terminal auki ja sinne komennot:
+
+$ cd /media/*/VBox*
+$ ls
+
+Sitten ajoin asennus scriptin
+
+$ sudo bash VBoxLinuxAdditions.run
+
+Käynnistin uudelleen ja kaikki toimi, sain paremman resoluution, sekä pystyn kopioimaan tekstiä omalta koneelta virtuaalikoneelle.
 
 
 
