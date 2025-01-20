@@ -9,7 +9,7 @@ Asensin VirtualBoxin koneelle, jonka jälkeen asensin debianin tarkalleen näide
 
 https://terokarvinen.com/2021/install-debian-on-virtualbox/?fromSearch=debian%20install
 
-ISO tiedoston lataamisen jälkeen käynnistin Oracle VirtualBox Managerin ja loin uuden virtuaalikoneen nimeltään "DebianTeroKarvinenCom".
+ISO tiedoston lataamisen jälkeen käynnistin Oracle VirtualBox Managerin ja loin uuden virtuaalikoneen nimeltään "DebianAapoNeuvonen".
 
 
 Heti alussa, kun asetin virtuaalikoneen nimeä, niin sen jälkeen liitin jo ISO tiedoston samassa valikossa, joka ainakin itsellä korvaa yhden vaiheen tulevissa ohjeissa.
