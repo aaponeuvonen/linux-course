@@ -1,0 +1,108 @@
+# x)
+
+https://susannalehto.fi/2022/teoriasta-kaytantoon-pilvipalvelimen-avulla-h4/
+
+- Vuokrataan oma palvelin DigitalOceanista ja tehdään tarvittavat asetukset
+- Suojataan palvelin tulimuurilla ja tehdään reikä ssh-palvelimelle jotta jatkossa se toimii
+-  
+- 
+
+
+
+# a)
+
+Tein testit Macbook Air:illa, M2 sirulla ja käyttöjärjestelmällä MacOS Sonoma 14.4. Virtuaalikone on QEMU 9.1 ARM Virtual Machine, käytin UTM sen ajamiseen.
+
+1. Ensiksi avasin DigitalOceanin, ja kokeilin yhdistää github education pakettia siihen, mutta minulla ei ole sopivaa opiskelijakorttia/dokumenttia,
+joka vaaditaan siihen.
+
+Tämän takia yhdistin vain PayPalin ilman mitään kredittejä.
+
+<img width="1470" alt="Screenshot 2025-02-10 at 15 41 19" src="https://github.com/user-attachments/assets/69dccfff-8342-4bae-b6e3-116816ceebf8" />
+
+2. Valitsin ylävalikosta create droplet ja aloin laittaa asetuksia. Käyttöjärjestelmä Ubuntu. Valitsin palvelimen sijainniksi Frankfurt, joka taitaa olla lähimpänä.
+
+<img width="1470" alt="Screenshot 2025-02-10 at 15 44 50" src="https://github.com/user-attachments/assets/b8fcb4fc-bcdb-41f4-9809-868402a0bc60" />
+
+3. Valitsin asetukset siten, että kokonaishinnaksi tuli 6e. 1 GB RAM ja 25GB SSD.
+
+<img width="1434" alt="Screenshot 2025-02-10 at 15 46 11" src="https://github.com/user-attachments/assets/e39c51cd-4714-4258-b3ad-1620ffe45fd4" />
+
+4. Asensin ja laitoin SSH:n käyttöön, ja valitsin sen DigitalOceanissa tunnistustavaksi.
+
+
+Seurasin SSH:n luomisessa DigitalOceanissa olevia ohjeita, jotka näkyvät jälkimmäisessä kuvassa.
+
+
+<img width="1470" alt="Screenshot 2025-02-10 at 15 52 37" src="https://github.com/user-attachments/assets/18843eff-3bb0-44c5-958e-56839da633db" />
+
+
+<img width="1046" alt="Screenshot 2025-02-10 at 15 58 03" src="https://github.com/user-attachments/assets/d2fefc79-3093-4774-b6fe-3c5ddd0c61e4" />
+
+
+5. Loin avaimen pelkällä ssh-keygen komennolla, ilman tarkempia asetuksia avaimelle, ja samalla tein julkisen avaimen itselleni.
+
+
+<img width="1185" alt="Screenshot 2025-02-10 at 15 58 47" src="https://github.com/user-attachments/assets/4410d598-4f38-4050-a59b-3b5afa408a90" />
+
+
+6.  Hain koko avaimen näkyviin, ja kopioin sen DigitalOceaniin.
+
+<img width="710" alt="Screenshot 2025-02-10 at 16 10 07" src="https://github.com/user-attachments/assets/f7f19032-318d-46ba-a74d-1596e12c0a65" />
+
+# b)
+
+7. Kirjauduin sisään root tunnuksilla komennolla "ssh root@161.35.211.79", ja syötin vielä perään oman avaimeni.
+  
+8.  Sitten päivitin palomuurin asetuksia ja tein reiän sinne.
+
+<img width="961" alt="Screenshot 2025-02-10 at 16 15 29" src="https://github.com/user-attachments/assets/81d734e4-6cd0-4e31-b53f-9f9f0b2d4001" />
+
+9. Loin käyttäjän "aapo" ja annoin sille sudo oikeudet, sekä muutkin tarpeelliset oikeudet kuten admin ja adm.
+
+ <img width="1085" alt="Screenshot 2025-02-10 at 16 21 10" src="https://github.com/user-attachments/assets/d4d9ef9f-d027-4d37-9a03-a6bd8e09a77f" />
+
+10. Kopioin root:in ssh asetukset, jotta pääsen sisään omalla käyttäjälläni
+
+<img width="1177" alt="Screenshot 2025-02-10 at 16 46 03" src="https://github.com/user-attachments/assets/a84b07ba-2764-438b-8ab8-575c68b7156d" />
+
+11. Suoritin kuvassa näkyvät komennot, ja editoin myös konfigurointitiedostoa vaihtamalla "PermitRootLogin" kohdan arvoksi "no".
+
+Käynnistin sen jälkeen ssh:n uudelleen komennolla "sudo service ssh restart"
+
+<img width="990" alt="Screenshot 2025-02-10 at 16 53 24" src="https://github.com/user-attachments/assets/c15e469a-b51d-4bf0-ad09-8bafd26cad93" />
+
+<img width="1470" alt="Screenshot 2025-02-10 at 16 51 20" src="https://github.com/user-attachments/assets/d150bd91-5376-4be5-b386-8fdff5ac9b7a" />
+
+12. Koitin kirjautua root käyttäjälle, mutta se ei onnistunut tietenkään.
+
+13. Kirjauduin sisään omalla tunnuksellani komennolla "ssh aapo@161.35.211.79"
+
+Testasin oliko palomuuri vielä toiminnassa ja olihan se.
+
+Päivitin myös ohjelmat "sudo apt-get update" ja "sudo apt-get upgrade" komennoilla
+
+<img width="641" alt="Screenshot 2025-02-10 at 16 54 30" src="https://github.com/user-attachments/assets/2d6908ac-047e-4531-b973-d02d70faf4a6" />
+
+# c)
+
+14. Asensin apachen komennolla "sudo apt install apache2"
+
+15. Syötin selaimeen "161.35.211.79" ja sivu avautui oikein. 
+
+<img width="1470" alt="Screenshot 2025-02-10 at 17 09 50" src="https://github.com/user-attachments/assets/737fd0d5-b403-4df4-9587-4ee0e0a20f46" />
+
+16. Tämän jälkeen muokkasin apache:n index.html tiedostoa ja kirjotin sinne jotain omaa.
+
+<img width="846" alt="Screenshot 2025-02-10 at 17 10 46" src="https://github.com/user-attachments/assets/bebb5e8c-0478-4384-9b29-c12a2794ef03" />
+
+<img width="1470" alt="Screenshot 2025-02-10 at 17 15 29" src="https://github.com/user-attachments/assets/209b29fa-ef76-4e89-9e40-4766b47b646f" />
+
+17. Kyseinen teksti näkyy selaimessa oikein.
+
+# Lähteet:
+
+https://susannalehto.fi/2022/teoriasta-kaytantoon-pilvipalvelimen-avulla-h4/
+https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/)https://terokarvinen.com/linux-palvelimet/
+https://terokarvinen.com/linux-palvelimet/
+
