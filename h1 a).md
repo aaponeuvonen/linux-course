@@ -1,13 +1,18 @@
 # Debian asennus VirtualBoxiin
 
+# a)
+
 CPU	AMD Ryzen 5 1600 Six-Core Processor, 3400 Mhz, 6 Core
 GPU NVIDIA GeForce GTX 1060 6GB
 RAM 8GB
 Windows 10 pro 64-bit
 
+
 Asensin VirtualBoxin koneelle, jonka jälkeen asensin debianin tarkalleen näiden ohjeiden mukaan:
 
 https://terokarvinen.com/2021/install-debian-on-virtualbox/?fromSearch=debian%20install
+
+
 
 ISO tiedoston lataamisen jälkeen käynnistin Oracle VirtualBox Managerin ja loin uuden virtuaalikoneen nimeltään "DebianAapoNeuvonen".
 
@@ -70,6 +75,24 @@ Sitten ajoin asennus scriptin
 $ sudo bash VBoxLinuxAdditions.run
 
 Käynnistin uudelleen ja kaikki toimi, sain paremman resoluution, sekä pystyn kopioimaan tekstiä omalta koneelta virtuaalikoneelle.
+ 
+
+# x) Free Software
+
+- "Free Software" tarkoittaa ohjelmistoa, joka tarjoaa kaikki neljä välttämätöntä vapautta sen käyttäjälle
+
+- Tukee yksilön oikeuksia ja yhteisöllisyyttä
+
+- Tarkoituksena pitää ohjelmisto yhteisön hallinnassa eikä se rajoitu tekijänoikeuksien tai lisenssirajoitusten takia
+
+- Vapaan ohjelmiston perusperiaatteita ovat saatavuus, muokattavuus, sen parantaminen ja myös mahdollisesti sen jakaminen eteenpäin 
+
+- Jos jossain ohjelmistossa ei ole jotain niistä neljästä, sitä ei luokitella vapaaksi ohjelmistoksi
+
+Lähde:  
+
+https://www.gnu.org/philosophy/free-sw.html
+
 
 
 
